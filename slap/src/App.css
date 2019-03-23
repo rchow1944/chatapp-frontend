@@ -5,6 +5,66 @@ body {
   padding: 0;
   user-select: none;
 }
+
+
+/* //#============================================================ */
+/* //#========================  Login/signup  ==================== */
+/* //#============================================================ */
+
+#LoginSignup{
+  background-color: #0B172A;
+  width: 100vw;
+  height: 93vh;
+  text-align: center;
+  padding-top: 13%;
+}
+
+#LoginSignup button{
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  width:30.2vw;
+  height: 60px;
+  font-size: 37px;
+  outline: none;
+  background-color: #BC4123;
+}
+.LoginSignupForm form{
+  /* border: 1px solid #BC4123; */
+  padding: 0;
+  width: 30.2vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.LoginSignupForm input{
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  width:30vw;
+  height: 90px;
+  font-size: 37px;
+  outline: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: .7;
+}
+.LoginSignupForm input[type="submit"]{
+  width: 30.2vw;
+  opacity: 1;
+  color: white;
+  background-color: rgb(2, 22, 58);
+}
+
+
+
+
+
+/* //#============================================================ */
+/* //#=============================  Home  ======================= */
+/* //#============================================================ */
+
 #Home {
   display: inline-flex;
 }
@@ -72,20 +132,20 @@ body {
 
 
 #searchUserInput[type="text"]{
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  color: white;
   margin-top: 40px;
-  width: 19vw;
   padding: 0;
   border: none;
   position: relative;
   margin-left: 1vw;
-  /* left: -70px; */
   top: -20px;
   background-color: #2A3132;
   border-radius: 8px;
-
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  width:20vw;
+  height: 60px;
+  font-size: 37px;
+  outline: none;
 }
 
 
@@ -195,13 +255,13 @@ body {
   height: 92vh;
 }
 
-form {
+#textInputForm {
   text-align: center;
   width: 70vw;
   transform: translateY(10vh);
 }
 
-input[type="text"] {
+#textInputInput[type="text"] {
   font-family: 'Lato', sans-serif;
   font-weight: 200;
   width:66vw;

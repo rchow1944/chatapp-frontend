@@ -25,8 +25,8 @@ class TextInput extends Component {
   render() {
     console.log(this.state.message);
     return (
-      <form onSubmit={this.handleSubmitMessage}>
-        <input onChange = {this.handleChangeMessage} type="text" placeholder="Slap away!"/>
+      <form onSubmit={this.handleSubmitMessage} id="textInputForm">
+        <input id="textInputInput" onChange = {this.handleChangeMessage} type="text" placeholder="Slap away!"/>
         <button id="submit">Slap!</button>
       </form>
     )

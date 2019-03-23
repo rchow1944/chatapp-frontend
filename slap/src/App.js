@@ -3,7 +3,7 @@ import ReactDom from "react-dom"
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import './App.css';
 import Nav from "./components/Nav"
-import Login from "./pages/Login"
+import LoginSignup from "./pages/LoginSignup"
 import Home from "./pages/Home"
 
 class App extends Component {
@@ -17,11 +17,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div id="App">
         <header className="App-header">
         <Nav/>
           <Switch>
-              <Route path="/login" component={Login} />
+              <Route path="/login" component={LoginSignup} />
               <Route path="/home" component={Home} />
               {/*<Route path=`/user/${id}` component={User}/>*/}
           </Switch>
