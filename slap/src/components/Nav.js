@@ -7,10 +7,7 @@ class Nav extends Component{
         <div className="NavComponents">
           <img id="NavIcon" src="https://cdn1.iconfinder.com/data/icons/paper-rock-scissors-1/100/Halt-512.png"/>
           <h1> Slap! (userName)</h1>
-        </div>
-        <div>
-        </div>
-        <div>
+          <h1>logout</h1>
         </div>
       </div>
     )

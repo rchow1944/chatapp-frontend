@@ -1,43 +1,243 @@
 body {
   font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  user-select: none;
 }
+#Home {
+  display: inline-flex;
+}
+
 #Nav{
   border: black 2px solid;
-  background-color: rgb(7, 30, 71);
-  font-size: 27px;
+  background-color: #0B172A;
+  font-size: 160%;
   color: white;
   padding-left: 10px;
+  height: 8vh;
 }
+
 #NavIcon{
-  width: 6%;
-  height: 6%;
+  width: 8vh;
+  height: 8vh;
   padding-right: 20px;
   padding-bottom: 13px;
 }
 .NavComponents{
-  display: flex;
+  height: 8vh;
+  display: inline-flex;
 }
+
+
+/* //#============================================================ */
+/* //#======================  User Container  ==================== */
+/* //#============================================================ */
 
 #UserContainer{
   color: white;
-  background-color: rgb(7, 30, 71);
-
-  border-top: solid white 1px;
-  border-left: solid white 1px;
+  background-color: #0B172A;
+  border-top: #BC4123 solid 1px;
   width: 30vw;
-  height: 86vh;
+  height: 92vh;
 }
+
+
+#UserContainer h2 {
+  font-size: 35px;
+  margin-left: 2vw;
+}
+
+
+.fa-plus-circle {
+  display: inline-block;
+  float: right;
+  transform: scale(2.5);
+  margin-top: -55px;
+  margin-right: 30px;
+}
+.fa-plus-circle:active {
+  transform: scale(2.8);
+}
+
+.searchUserForm{
+  font-size: 35px;
+  margin-right: 270px;
+  width: inherit;
+  transform: translateY(1vh);
+}
+#searchUserInput::placeholder{
+  color: white;
+}
+
+
+#searchUserInput[type="text"]{
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  color: white;
+  margin-top: 40px;
+  width: 19vw;
+  padding: 0;
+  border: none;
+  position: relative;
+  margin-left: 1vw;
+  /* left: -70px; */
+  top: -20px;
+  background-color: #2A3132;
+  border-radius: 8px;
+
+}
+
+
+#UserList {
+  text-align: left;
+  /* border-top: #BC4123 solid 3px; */
+  width: 30vw;
+}
+#UserList:hover {
+  cursor:pointer;
+}
+
+.User {
+  /* border: red dashed 3px; */
+
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  /* margin-left: -28px; */
+}
+.User:hover{
+  background-color: rgb(2, 22, 58);
+}
+.User:active {
+  background-color: rgb(102, 91, 10);
+}
+.User:hover .fa-times{
+  display: inline-block;
+  float: right;
+  margin-right: 4vw;
+  /* margin-right: 30px; */
+  /* text-align: right; */
+}
+.User span{
+  width: 100%;
+  margin-left: 30px;
+  font-size: 27px;
+  text-align: center;
+}
+
+.fa-times {
+  display: none;
+  text-align: right;
+}
+.fa-times:active {
+  transform: scale(1.4);
+  background: transparent;
+}
+
+.fa-circle {
+  margin-left: -30px;
+  margin-right: 40px;
+  /* margin-right: 40px; */
+}
+
+#searchResult{
+  background-color: rgb(2, 22, 58);
+  width: 100%;
+  border-top: 3px solid #BC4123;
+  border: 1px solid #BC4123;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
+  font-size: 30px;
+  list-style-type: none;
+  padding-left: 35px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+#outterSearchDiv {
+  max-height: 400px;
+  width: 30vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* transform: translateY(1vh); */
+}
+
+#searchResult:hover{
+  background-color: #0B172A;
+}
+#searchResult:hover .fa-plus{
+  display: inline;
+}
+.fa-plus {
+  display: none;
+  margin-right: 4vw;
+  float: right;
+  transform: scale(1.8);
+  transform: translateY(-29px);
+}
+.fa-plus:active {
+  transform: scale(2.4) translateY(-12px);
+}
+
+
+/* //#============================================================ */
+/* //#======================  Room Container  ==================== */
+/* //#============================================================ */
 
 #RoomContainer {
   color:white;
-  background-color: rgb(26, 49, 91);
-  border-top: solid white 1px;
-  border-right: solid white 1px;
+  background-color: #0B172A;
+  border-top: solid #BC4123 1px;
+  border-left: solid #BC4123 1px;
+  border-right: solid #BC4123 1px;
   width: 70vw;
-  height: 86vh;
+  height: 92vh;
 }
 
-#Home {
-  display: inline-flex;
+form {
+  text-align: center;
+  width: 70vw;
+  transform: translateY(10vh);
+}
 
+input[type="text"] {
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  width:66vw;
+  height: 60px;
+  font-size: 37px;
+  outline: none;
+}
+
+#submit {
+  font-size: 47px;
+  background-color: coral;
+  display: none;
+}
+
+
+#MessageWindow {
+  /* border: 3px solid #BC4123; */
+  width:66vw;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  height: 65vh;
+  background-color: #0B172A;
+  font-size: 37px;
+  text-align: left;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: translateY(6vh);
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.messages {
+color: white;
+list-style-type: none;
+display: flex;
+flex-direction: column-reverse;
+/* background-color: rgb(50, 64, 107); */
 }

@@ -8,15 +8,12 @@ class User extends Component {
 
   render () {
     return (
-      <div>
-      <tr>
-        <td>
-          <h3>(status)</h3>
-        </td>
-        <td>
-          <h3>Individual Users</h3>
-        </td>
-      </tr>
+      <div className="User">
+        <span>
+        <span>{this.state.active ? <i className="fas fa-circle"></i> : <i className="far fa-circle"></i>}</span>
+        <span>{this.props.users.name}</span>
+        <i onClick={this.props.deleteChat}className="fas fa-times"></i>
+        </span>
       </div>
     )
   }
