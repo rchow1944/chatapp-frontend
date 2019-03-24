@@ -70,7 +70,7 @@ class UserContainer extends Component {
       let results = this.state.result.map(user=> <SearchResult result= {this.state.result} user={user} handleUserAdd={this.handleUserAdd}/>)
     return (
       <div id="UserContainer">
-      <span>
+
       {
         this.state.activateSearch
         ?
@@ -79,7 +79,7 @@ class UserContainer extends Component {
         <h2>Direct Messages</h2>
       }
         <i id="add" className="fas fa-plus-circle" onClick={this.clickHandler}></i>
-      </span>
+
         <br/>
         <br/>
         <div id="outterSearchDiv">

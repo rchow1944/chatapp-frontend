@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import UserContainer from '../containers/UserContainer'
 import RoomContainer from '../containers/RoomContainer'
-import Setting from '../components/Setting'
 class Home extends Component{
 
   state = {
@@ -19,6 +18,8 @@ class Home extends Component{
               name: "Edwin"
             }],
     search: '',
+    theme: 'light'
+
   }
 
 
@@ -35,17 +36,32 @@ class Home extends Component{
     }
   }
 
+  handleThemeClearlyWhite=()=>{
+    console.log("white");
+    this.setState({
+      theme: "whitewhite"
+    })
+  }
 
+  handleThemeDeepSea=()=>{
+    this.setState({
+      theme: "navy"
+    })
+  }
 
+  handleThemeFancySpancy =()=> {
+    this.setState({
+      theme: "rainbow"
+    })
+  }
 
 
   render () {
     // console.log(this.state.addUser);
     return (
       <div id="Home">
-          <UserContainer users={this.state.users} handleUserSearch={this.handleUserSearch}  />
-          <RoomContainer />
-          <Setting />
+          <UserContainer users={this.state.users} handleUserSearch={this.handleUserSearch} handleTheme={this.state.theme}/>
+          <RoomContainer handleTheme={this.state.theme}/>
       </div>
     )
   }

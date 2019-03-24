@@ -5,24 +5,15 @@ import Signup from "../components/Signup"
 class LoginSignup extends Component {
   state = {
     signUp:true,
-    button: "Switch to Login"
   }
 
 
 
 
   handleSwitch=()=>{
-    if(this.state.signUp){
-      this.setState({
-        signUp: !this.state.signUp,
-        button: "Switch to Sign Up"
-      })
-    } else {
-      this.setState({
-        signUp: !this.state.signUp,
-        button: "Switch to Login"
-      })
-    }
+    this.setState({
+      signUp: !this.state.signUp,
+    })
   }
 
 
@@ -30,10 +21,10 @@ class LoginSignup extends Component {
 
 
   render () {
-    console.log(this.state);
+    const buttonText = this.state.signUp? "Switch to Login" :"Switch to Sign Up"
     return (
       <div id="LoginSignup">
-        <button id="toggleLoginSignup" onClick={this.handleSwitch}>{this.state.button}</button>
+        <button id="toggleLoginSignup" onClick={this.handleSwitch}>{buttonText}</button>
         {
           this.state.signUp
           ?

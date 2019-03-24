@@ -19,7 +19,7 @@ class RoomContainer extends Component {
     return (
 
       <div id="RoomContainer">
-        <h1>RoomContainer</h1>
+        <h1>Name of the User</h1>
         <MessageWindow messages={this.state.messages}/>
         <TextInput handleSubmitMessage={this.handleSubmitMessage}/>
       </div>

@@ -30,11 +30,9 @@ class TextInput extends Component {
 
   addEmoji =(e)=>{
     this.setState({
-      message: String([...this.state.message] + e.native)
+      message: this.state.message + e.native
     })
   }
-
-
 
   render() {
     console.log(this.state.message);
