@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import UserContainer from '../containers/UserContainer'
 import RoomContainer from '../containers/RoomContainer'
-
+import Setting from '../components/Setting'
 class Home extends Component{
 
   state = {
@@ -45,6 +45,7 @@ class Home extends Component{
       <div id="Home">
           <UserContainer users={this.state.users} handleUserSearch={this.handleUserSearch}  />
           <RoomContainer />
+          <Setting />
       </div>
     )
   }

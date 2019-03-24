@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import TextInput from '../components/TextInput'
 import MessageWindow from '../components/MessageWindow'
-
 class RoomContainer extends Component {
 
   state ={
