@@ -6,7 +6,7 @@ class SearchUsers extends Component {
     return(
       <div id="search">
         <form className="searchUserForm" onSubmit={this.props.handleUserSearch}>
-          <input id="searchUserInput" placeholder=" Slap someone!" type="text" onChange={this.props.handleSearchOnChange} ></input>
+          <input id="searchUserInput" autocomplete="off" placeholder=" Slap someone!" type="text" value={this.props.searchValue}onChange={this.props.handleSearchOnChange} ></input>
         </form>
       </div>
     )

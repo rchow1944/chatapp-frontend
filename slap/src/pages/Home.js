@@ -4,64 +4,25 @@ import RoomContainer from '../containers/RoomContainer'
 class Home extends Component{
 
   state = {
-    users: [{
-              name: "Joseph"
-            }, {
-              name: "Raymond"
-            }, {
-              name: "Tony"
-            }, {
-              name: "John"
-            }, {
-              name: "Redmond"
-            }, {
-              name: "Edwin"
-            }],
-    search: '',
-    theme: 'light'
-
+    currentRoom: {}
   }
 
 
-
-  handleUserSearch = (s) =>{
-    // console.log(s);
-    let newUsers = [...this.state.users]
-    let foundUser = newUsers.filter(user => user.name.toLowerCase().includes(s.toLowerCase()))
-    console.log(foundUser);
-    if (foundUser.length > 0) {
-      alert(`${foundUser[0].name} ${foundUser[1].name}`)
-    } else {
-      alert("No one was found");
-    }
-  }
-
-  handleThemeClearlyWhite=()=>{
-    console.log("white");
+  handleSelectUser=(userRoom)=>{
     this.setState({
-      theme: "whitewhite"
-    })
-  }
-
-  handleThemeDeepSea=()=>{
-    this.setState({
-      theme: "navy"
-    })
-  }
-
-  handleThemeFancySpancy =()=> {
-    this.setState({
-      theme: "rainbow"
+      currentRoom: userRoom
     })
   }
 
 
   render () {
     // console.log(this.state.addUser);
+
+    const roomMessages = Object.keys(this.state.currentRoom).length > 0 ? this.props.messages.filter(message => message.room_id === this.state.currentRoom.room.id) : []
     return (
       <div id="Home">
-          <UserContainer users={this.state.users} handleUserSearch={this.handleUserSearch} handleTheme={this.state.theme}/>
-          <RoomContainer handleTheme={this.state.theme}/>
+          <UserContainer handleUserSearch={this.handleUserSearch} handleSelectUser={this.handleSelectUser} handleUserAdd={this.handleSelectUser} userRooms={this.props.userRooms}/>
+          <RoomContainer handleSubmitMessage={this.props.handleSubmitMessage} handleCurrentRoom={this.state.currentRoom} messages={roomMessages}/>
       </div>
     )
   }

@@ -2,14 +2,33 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 class Login extends Component {
   state={
-    login:false
+    username:'',
+    password: ''
   }
 
-  handleLogin=()=>{
+  handleLogin=(e)=>{
+    e.preventDefault()
+
+    this.props.handleLogin(this.state)
+
     this.setState({
-      login: true
+      username: '',
+      password: ''
     })
   }
+
+  handleChangeUsername =(e)=> {
+    this.setState({
+      username: e.target.value
+    })
+  }
+  handleChangePassword =(e)=> {
+    this.setState({
+      password: e.target.value
+    })
+  }
+
+
 
 
   render () {
@@ -20,9 +39,9 @@ class Login extends Component {
     return (
       <div className="LoginSignupForm">
         <form onSubmit={this.handleLogin}>
-          <input type="text" placeholder="Username"/>
-          <input type="password" placeholder="Password"/>
-          <input type="submit" name="Login"/>
+          <input type="text" placeholder="Username" onChange={this.handleChangeUsername} value={this.state.username}/>
+          <input type="password" placeholder="Password" onChange={this.handleChangePassword} value={this.state.password}/>
+          <input type="submit" value="Login"/>
         </form>
       </div>
     )

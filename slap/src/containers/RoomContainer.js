@@ -1,27 +1,33 @@
 import React, { Component } from 'react'
+import SearchConversation from '../components/SearchConversation'
 import TextInput from '../components/TextInput'
 import MessageWindow from '../components/MessageWindow'
 class RoomContainer extends Component {
 
-  state ={
-    messages:["Hey", "whats up", "my name is Joseph", "i like durians", "more food please", "this shit is so hard", "why wont you stay on the bototm of the page!!", "i need this shit to work", "what day is today", "do i need a god damn umbrella or not", "money", "more money", "lots of money"]
-  }
-  handleSubmitMessage=(m)=>{
-    console.log(m);
-    this.setState({
-      messages: [...this.state.messages, m]
-    })
+  state = {
+    value: ''
   }
 
+
+
+  handleSearchValue=({target:{value}})=> this.setState({value})
 
   render (){
     // console.log("it works", this.state.messages);
+    console.log(this.props.messages)
+    const newMessages = this.props.messages.length > 0 ?
+      this.props.messages.filter(mess => mess.content.toLowerCase().includes(this.state.value.toLowerCase()))
+      : []
+
     return (
 
       <div id="RoomContainer">
-        <h1>Name of the User</h1>
-        <MessageWindow messages={this.state.messages}/>
-        <TextInput handleSubmitMessage={this.handleSubmitMessage}/>
+        <div className="searchDiv">
+          <h1>{this.props.handleCurrentRoom.username}</h1>
+          <SearchConversation handleSearchConvo={this.handleSearchValue} value={this.state.value}/>
+        </div>
+        <MessageWindow messages={this.props.messages} handleCurrentRoom={this.props.handleCurrentRoom}/>
+        <TextInput handleSubmitMessage={this.props.handleSubmitMessage}/>
       </div>
     )
   }

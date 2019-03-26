@@ -37,21 +37,23 @@ class TextInput extends Component {
   render() {
     console.log(this.state.message);
     return (
-      <div>
+      <div id="textInputOuterDiv">
+
+        <form onSubmit={this.handleSubmitMessage} id="textInputForm">
+          <input id="textInputInput" autocomplete="off" onChange = {this.handleChangeMessage} value={this.state.message} type="text" placeholder="S l a p   a w a y!"/>
+          <button id="submit">Slap!</button>
+        </form>
         <div id="emojiBox">
-        <input type="button" id="toggleEmoji" onClick={this.toggleEmojiPicker} value="toggleEmoji"></input>
+        <input type="button" id="toggleEmoji" onClick={this.toggleEmojiPicker} value=";-)"></input>
         {
           this.state.toggleEmoji
           ?
           <Picker set='emojione' title='Slap an emoji!' emoji='point_up' onSelect={this.addEmoji}/>
           :
           null
+
         }
         </div>
-      <form onSubmit={this.handleSubmitMessage} id="textInputForm">
-        <input id="textInputInput" autocomplete="off" onChange = {this.handleChangeMessage} value={this.state.message} type="text" placeholder="Slap away!"/>
-        <button id="submit">Slap!</button>
-      </form>
       </div>
     )
   }

@@ -28,9 +28,9 @@ class LoginSignup extends Component {
         {
           this.state.signUp
           ?
-          <Signup />
+          <Signup handleSignup={this.props.handleSignup}/>
           :
-          <Login />
+          <Login handleLogin={this.props.handleLogin}/>
         }
       </div>
     )

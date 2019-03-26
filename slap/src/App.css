@@ -27,8 +27,8 @@ body {
   text-align: center;
   font-family: 'Lato', sans-serif;
   font-weight: 200;
-  width:30.3vw;
-  height: 60px;
+  width:30.4vw;
+  height: 50px;
   font-size: 37px;
   outline: none;
   border: none;
@@ -38,10 +38,6 @@ body {
   transform: translateY(-4px);
   cursor: pointer;
 }
-/* #LoginSignup button:active {
-  transform: rotateY(180deg);
-  cursor: pointer;
-} */
 .LoginSignupForm form{
   /* border: 1px solid #BC4123; */
   padding: 0;
@@ -56,17 +52,18 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 200;
   width:30vw;
-  height: 90px;
+  height: 60px;
   font-size: 37px;
   outline: none;
   display: block;
   margin-left: auto;
   margin-right: auto;
   opacity: .7;
+
 }
 .LoginSignupForm input[type="submit"]{
   margin-left: 1px;
-  width: 30.3vw;
+  width: 30.4vw;
   opacity: 1;
   color: white;
   background-color: #BC4123;
@@ -93,7 +90,7 @@ body {
 #Nav{
   border: black 2px solid;
   background-color: #0B172A;
-  font-size: 160%;
+  /* font-size: 160%; */
   color: white;
   padding-left: 10px;
   height: 8vh;
@@ -108,6 +105,29 @@ body {
 .NavComponents{
   height: 8vh;
   display: inline-flex;
+}
+#Nav h1 {
+  margin-left: 20px;
+}
+
+#nameNlogout {
+  display: flex;
+  text-align: right;
+}
+
+#logOutButton{
+  height: 8vh;
+  width: 6vw;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 27px;
+  align-items: center;
+  outline: none;
+  margin-left: 75vw;
+}
+#logOutButton:hover {
+  color: #BC4123;
 }
 
 
@@ -125,28 +145,24 @@ body {
 
 
 #UserContainer h2 {
-  font-size: 35px;
-  margin-left: 2vw;
+  font-size: 29px;
+  margin-top: 14px;
+  margin-left: 15px;
+  transform: translateY(-3.5vh);
 }
 
 
 .fa-plus-circle {
-  display: inline-block;
-  float: right;
-  transform: scale(2.5);
-  margin-top: -55px;
-  margin-right: 30px;
+  transform: scale(1.7);
+  height: 13.3px;
 }
+
 .fa-plus-circle:active {
-  transform: scale(2.8);
+  transform: scale(2.2) translateY(-3px);
 }
 
 .searchUserForm{
-  font-size: 35px;
-  margin-right: 270px;
   width: inherit;
-  transform: translateY(0.3vh);
-
 }
 #searchUserInput::placeholder{
   color: white;
@@ -154,7 +170,7 @@ body {
 
 
 #searchUserInput[type="text"]{
-  margin-top: 40px;
+  /* margin-top: 40px; */
   padding: 0;
   border: none;
   position: relative;
@@ -165,8 +181,8 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 200;
   width:15vw;
-  height: 60px;
-  font-size: 37px;
+  height: 40px;
+  font-size: 20px;
   outline: none;
 }
 
@@ -181,8 +197,8 @@ body {
 
 .User {
   display: inline-block;
-  width: 89%;
-  padding: 15px;
+  width: 98%;
+  /* padding: 15px; */
   padding-top: 40px;
   padding-bottom: 30px;
   border-radius: 8px;
@@ -209,6 +225,12 @@ body {
   text-align: center;
 }
 
+span.userName{
+  margin: 0;
+  padding: 0;
+
+}
+
 .fa-times {
   display: none;
   text-align: right;
@@ -231,19 +253,24 @@ body {
   /* border-top: 3px solid #BC4123; */
   /* border: 1px solid #BC4123; */
   box-shadow: 0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18);
-  font-size: 30px;
+  font-size: 27px;
   list-style-type: none;
   padding-left: 35px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 #outterSearchDiv {
-  max-height: 400px;
-  width: 19.3vw;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  display: flex;
+  padding-top: 30px;
   /* transform: translateY(1vh); */
 }
+
+#listDisplay {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 400px;
+}
+
 
 #searchResult:hover{
   background-color: #BC4123;
@@ -301,6 +328,31 @@ body {
   /* border-radius: 10px; */
 }
 
+.searchConvo {
+  display: flex;
+  position: sticky;
+  margin-left: 200px;
+}
+.searchConvo input {
+  outline: none;
+  border-radius: 8px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  width:24vw;
+  height: 55px;
+  font-size: 35px;
+}
+
+.searchConvo input::placeholder {
+  color: grey;
+}
+
+.searchDiv {
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+}
+
 
 #MessageWindow {
   /* border: 3px solid #BC4123; */
@@ -308,9 +360,9 @@ body {
   text-align: center;
   margin-left: 30px;
   margin-right: auto;
-  height: 65vh;
+  height: 60vh;
   background-color: white;
-  font-size: 37px;
+  font-size: 20px;
   text-align: left;
   overflow-y: auto;
   overflow-x: hidden;
@@ -341,37 +393,50 @@ border-radius: 0 7px 7px 0;
   list-style-type: none;
   border: #0B172A solid 1px;
   background-color: white;
-  position: relative;
+  /* position: relative; */
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 35px 25px 25px 0;
   clear: both;
   float: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   /* height: 50px; */
 }
 
-.messages:hover {
-  background-color: rgb(252, 236, 227);
+.messageOutmostDiv:hover .fa-heart{
+  display: block;
 }
-.messages:hover .fa-heart {
-  display: inline-block;
-  float: right;
+
+/* .messageOutmostDiv:hover .userInfo{
+  display: block;
+} */
+
+/* .userInfo{
   position: absolute;
-  transform: translateX(35px);
-}
-.messages:active .redHeart {
+  display: none;
+} */
+
+.redheart {
+  color: red;
   display: inline;
 }
 
-.redHeart{
-  position: fixed;
-  display: inline;
-  transform: scale(.15) translateY(-60vh) translateX(-23.2vw);
+.messageOutmostDiv{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
 }
-.fa-heart {
+.messages:hover {
+  background-color: rgb(252, 236, 227);
+}
+.moveHeart {
+  margin-left: 10px;
+}
+.blankheart {
   display: none;
-  width: 10px;
-  height: 10px;
   margin: 0;
   padding: 0;
 }
@@ -420,16 +485,19 @@ border-radius: 0 7px 7px 0;
 
 
 #toggleEmoji{
-  float: left;
   width: 6vw;
-  height: 5.4vh;
-  transform: translateY(28.75vh) translateX(-1vw);
+  height: 60px;
+  transform: translateY(35.8vh) translateX(-7vw);
   outline: none;
   border-radius: 10px;
+  position: fixed;
+}
 
+#textInputOuterDiv{
+  display: flex;
 }
 #emojiBox{
-  transform: translateY(-236px) translateX(1035px);
+  transform: translateY(-26.2vh) translateX(55vw);
   position: fixed;
 }
 
@@ -846,4 +914,47 @@ border-radius: 0 7px 7px 0;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #============================================= */
+/* #===================== Error ================= */
+/* #============================================= */
+
+#errorPage {
+  height: 50vh;
+  font-size: 20px;
+  max-height: 60vh;
+}
+
+#errorDisplay {
+  margin-left: 30px;
+  height: 45vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-direction: column;
+}
+
+#errorDisplay li{
+  margin-top: 9px;
+  padding: 10px 30px 10px 30px;
+  list-style-type: none;
+  border: #0B172A solid 1px;
+  background-color: white;
+  border-radius: 35px 25px 25px 0;
+  clear: left;
+  float: left;
+  display: block;
 }
