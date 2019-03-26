@@ -16,7 +16,7 @@ class TextInput extends Component {
 
   handleSubmitMessage = (e) => {
     e.preventDefault()
-    this.props.handleSubmitMessage(this.state.message)
+    this.props.handleSubmitMessage(this.state.message, this.props.currentRoom)
     this.setState({
       message: ''
     })

@@ -52,8 +52,8 @@ class App extends Component {
       this.props.history.push("/home")
     }))
   }
-  handleSubmitMessage=(m)=>{
-    postNewMessage(m, localStorage.token)
+  handleSubmitMessage=(m, currentRoom)=>{
+    postNewMessage(m, currentRoom, localStorage.token)
       .then(res => res.json())
       .then(message => this.setState({
         userMessages: [...this.state.userMessages, message]
@@ -121,16 +121,18 @@ function postNewUser(userInfo) {
   })
 }
 
-function postNewMessage(newMessage, token) {
+function postNewMessage(newMessage, currentRoom, token) {
+  // debugger
   return fetch('http://localhost:3001/messages', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Accept: 'application/json',
+      Accept: 'application/jqson',
       Authorization: `Bearer ${token}`
     },
-    body: JSON.stringify({
-      content: newMessage
-    })
+    body: JSON.stringify({message:{
+      content: newMessage,
+      room_id: currentRoom.room.id
+    }})
   })
 }

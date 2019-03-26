@@ -11,7 +11,7 @@ class Home extends Component{
   handleSelectUser=(userRoom)=>{
     this.setState({
       currentRoom: userRoom
-    })
+    }, console.log(userRoom))
   }
 
 
@@ -22,7 +22,7 @@ class Home extends Component{
     return (
       <div id="Home">
           <UserContainer handleUserSearch={this.handleUserSearch} handleSelectUser={this.handleSelectUser} handleUserAdd={this.handleSelectUser} userRooms={this.props.userRooms}/>
-          <RoomContainer handleSubmitMessage={this.props.handleSubmitMessage} handleCurrentRoom={this.state.currentRoom} messages={roomMessages}/>
+          <RoomContainer handleSubmitMessage={this.props.handleSubmitMessage} currentRoom={this.state.currentRoom} messages={roomMessages}/>
       </div>
     )
   }

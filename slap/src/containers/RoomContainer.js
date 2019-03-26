@@ -23,11 +23,11 @@ class RoomContainer extends Component {
 
       <div id="RoomContainer">
         <div className="searchDiv">
-          <h1>{this.props.handleCurrentRoom.username}</h1>
+          <h1>{this.props.currentRoom.username}</h1>
           <SearchConversation handleSearchConvo={this.handleSearchValue} value={this.state.value}/>
         </div>
-        <MessageWindow messages={this.props.messages} handleCurrentRoom={this.props.handleCurrentRoom}/>
-        <TextInput handleSubmitMessage={this.props.handleSubmitMessage}/>
+        <MessageWindow messages={this.props.messages} currentRoom={this.props.currentRoom}/>
+        <TextInput handleSubmitMessage={this.props.handleSubmitMessage} currentRoom={this.props.currentRoom}/>
       </div>
     )
   }
