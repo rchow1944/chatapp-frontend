@@ -90,7 +90,7 @@ class UserContainer extends Component {
 
 
   render(){
-    console.log(this.state.currentList);
+    // console.log(this.state.currentList);
       let results = this.state.result.map(user=> <SearchResult result= {this.state.result} user={user} handleUserAdd={this.handleUserAdd}/>)
     return (
       <div id="UserContainer">

@@ -26,6 +26,8 @@ class App extends Component {
           userRooms:userData.rooms,
           userMessages: userData.messages
         }, () => {
+          // debugger
+          console.log(userData)
           this.props.history.push("/home")
         }))
           :
